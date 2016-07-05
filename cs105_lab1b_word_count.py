@@ -66,7 +66,7 @@ wordsDF.printSchema()
 # TODO: Replace <FILL IN> with appropriate code
 from pyspark.sql.functions import lit, concat
 
-pluralDF = wordsDF.<FILL IN>
+pluralDF = wordsDF.select(concat(wordsDF.word, lit('s')).alias('word'))
 pluralDF.show()
 
 # COMMAND ----------
@@ -90,7 +90,7 @@ Test.assertEquals(pluralDF.columns, ['word'], "there should be one column named 
 
 # TODO: Replace <FILL IN> with appropriate code
 from pyspark.sql.functions import length
-pluralLengthsDF = pluralDF.<FILL IN>
+pluralLengthsDF = pluralDF.select(length('word'))
 pluralLengthsDF.show()
 
 # COMMAND ----------
