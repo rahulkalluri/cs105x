@@ -126,8 +126,7 @@ Test.assertEquals(asSelf(pluralLengthsDF.collect()), [4, 9, 4, 4, 4],
 # COMMAND ----------
 
 # TODO: Replace <FILL IN> with appropriate code
-wordCountsDF = (wordsDF
-                <FILL IN>)
+wordCountsDF = (wordsDF.groupby('word').count())
 wordCountsDF.show()
 
 # COMMAND ----------
