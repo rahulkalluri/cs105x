@@ -157,7 +157,7 @@ printDataFrames(True)
 # COMMAND ----------
 
 # TODO: Replace <FILL IN> with appropriate code
-uniqueWordsCount = <FILL IN>
+uniqueWordsCount = wordsDF.distinct().count()
 print uniqueWordsCount
 
 # COMMAND ----------
@@ -177,8 +177,7 @@ Test.assertEquals(uniqueWordsCount, 3, 'incorrect count of unique words')
 # COMMAND ----------
 
 # TODO: Replace <FILL IN> with appropriate code
-averageCount = (wordCountsDF
-                <FILL IN>)
+averageCount = wordCountsDF.groupBy().mean('count').collect()
 
 print averageCount
 
@@ -186,6 +185,8 @@ print averageCount
 
 # TEST Means of groups using DataFrames (3b)
 Test.assertEquals(round(averageCount, 2), 1.67, 'incorrect value of averageCount')
+# TypeError: a float is required
+# How to set it as a float?
 
 # COMMAND ----------
 
